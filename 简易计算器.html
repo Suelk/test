@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>简易计算器</title>
+	<style>body{padding:20px;font-size:30px;} input{width:300px;height:30px;vertical-align: text-bottom;font-size:28px;text-indent:5px;}input[type='button']{width:100px;height:35px;}</style>
+
+	<!-- 在script标签中书写JS代码 -->
+	<script>
+		/* ------- 1、实现求和运算 ------- */
+		function sum(){
+			//1.获取第一个数值1
+			var num1 = document.getElementById("num1").value-0;
+			//2.获取第二个数值2
+			var num2 = document.getElementById("num2").value-0;
+			//3.获取显示结果的元素(<span id="result">)
+			var resultEle = document.getElementById("result");
+			//4.将计算结果写入span元素内, 显示在网页上
+			resultEle.innerHTML = parseInt(num1)+parseInt(num2);
+		}
+		/* ------- 2、实现求差运算 -------*/
+		function sub(){
+			var num1 = document.getElementById("num1").value;
+			var num2 = document.getElementById("num2").value;
+			var resultEle = document.getElementById("result");
+			resultEle.innerHTML = parseInt(num1)-parseInt(num2);
+		} 
+		
+		/* ------- 3、实现乘法运算 -------*/
+		function mul(){
+			var num1 = document.getElementById("num1").value;
+			var num2 = document.getElementById("num2").value;
+			var resultEle = document.getElementById("result");
+			resultEle.innerHTML = parseInt(num1)*parseInt(num2);
+		} 
+		
+		/* ------- 4、实现除法运算 -------*/
+		function div(){
+			var num1 = document.getElementById("num1").value;
+			var num2 = document.getElementById("num2").value;
+			var resultEle = document.getElementById("result");
+			resultEle.innerHTML = parseInt(num1)/parseInt(num2);
+		} 
+		
+	</script>
+	
+</head>
+<body>
+	<hr/>
+	数值1: <input id="num1" type="text" />	<br/><br/>
+	数值2: <input id="num2" type="text" />
+	<hr/>
+	<!-- 求和 -->
+	<input type="button" value="+" 
+			id="sum" onclick="sum()" />
+		
+	<!-- 求差 -->
+	<input type="button" value="-" 
+			id="sub" onclick="sub()" />
+	<!-- 求乘 -->
+	<input type="button" value="*" 
+			id="mul" onclick="mul()" />
+	<!-- 求除 -->
+	<input type="button" value="/" 
+			id="div" onclick="div()" />
+	<hr/>
+	计算结果：<span id="result">0</span>
+	<hr/>
+</body>
+</html>
